@@ -6,14 +6,15 @@
 
 ## Download
 
-**Latest version: v1.1** (Oct 7, 2026)
+**Latest version: v1.2** (Oct 8, 2026)
 
-- [MediaRunner_v1.1_no-install.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.1/MediaRunner_v1.1_no-install.zip) - 148 KB
-- [MediaRunner_v1.1_Setup.exe](https://github.com/codenomics/MediaRunner/releases/download/v1.1/MediaRunner_v1.1_Setup.exe) - 187 KB
+- [MediaRunner_v1.2_no-install.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.2/MediaRunner_v1.2_no-install.zip) - 148 KB
+- [MediaRunner_v1.2_Setup.exe](https://github.com/codenomics/MediaRunner/releases/download/v1.2/MediaRunner_v1.2_Setup.exe) - 187 KB
+- [MediaRunner_v1.2_source.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.2/MediaRunner_v1.2_source.zip) - 131 KB
 
-What's new in v1.1:
+What's new in v1.2:
 
-- Added the app icon
+- No app changes. Uploading Code**
 
 Older versions are on the [Releases page](https://github.com/codenomics/MediaRunner/releases).
 
@@ -32,6 +33,10 @@ Older versions are on the [Releases page](https://github.com/codenomics/MediaRun
 3. Open the folder and double-click the app's .exe. Nothing is installed; delete the folder to remove it.
 
 Windows says "Windows protected your PC"? Click More info > Run anyway. It shows that for apps without a paid signing certificate.
+
+## Source code
+
+Want to see how it works, or build it yourself? Download the file ending in `_source.zip` above, extract it and double-click `Build.bat`. It only uses the C# compiler that already comes with Windows, so there is nothing to install.
 
 ## More details
 
