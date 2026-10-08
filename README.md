@@ -6,15 +6,15 @@
 
 ## Download
 
-**Latest version: v1.2** (Oct 8, 2026)
+**Latest version: v1.3** (Oct 8, 2026)
 
-- [MediaRunner_v1.2_no-install.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.2/MediaRunner_v1.2_no-install.zip) - 148 KB
-- [MediaRunner_v1.2_Setup.exe](https://github.com/codenomics/MediaRunner/releases/download/v1.2/MediaRunner_v1.2_Setup.exe) - 187 KB
-- [MediaRunner_v1.2_source.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.2/MediaRunner_v1.2_source.zip) - 131 KB
+- [MediaRunner_v1.3_no-install.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.3/MediaRunner_v1.3_no-install.zip) - 148 KB
+- [MediaRunner_v1.3_Setup.exe](https://github.com/codenomics/MediaRunner/releases/download/v1.3/MediaRunner_v1.3_Setup.exe) - 187 KB
+- [MediaRunner_v1.3_source.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.3/MediaRunner_v1.3_source.zip) - 131 KB
 
-What's new in v1.2:
+What's new in v1.3:
 
-- No app changes. Uploading Code**
+- updater versioning fix**
 
 Older versions are on the [Releases page](https://github.com/codenomics/MediaRunner/releases).
 
