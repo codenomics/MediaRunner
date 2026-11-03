@@ -1,20 +1,39 @@
 # MediaRunner
 
+One window to look after the media apps on your home server: Sonarr, Radarr, NZBGet, Overseerr, Prowlarr, Tautulli and Portainer, plus the server's own CPU, memory and disks. Look at what is downloading, approve requests, restart a container, and more, without opening each app's web page.
+
+MediaRunner talks to your apps over your home network (or any address you give it). They need to be running already; it does not install or replace any of them.
+
+### Features
+
+- A Home page with a card for each app: a green or red light, what is downloading, what is coming up, requests waiting, who is watching, running containers, and the server's CPU, memory and disks
+- Shows (Sonarr) and Movies (Radarr): browse, add, remove, search, pick a release yourself, and fix bad downloads. Open a movie for its ratings and cast
+- Tick several shows or movies at once to remove them
+- Downloads (NZBGet), Requests (Overseerr), Tautulli and Portainer tabs
+- A Server tab with CPU, load, memory, disks, network and temperatures
+- Profiles, so one window can switch between Home, Away or another server
+- Five themes, and it checks for new versions when it starts
+
 > This application is built by AI. I made this for myself and I'm uploading it to GitHub for backup and to share in case anyone can get any use out of it. It's pretty specific to my setup and my needs, but if you can get any use out of it, then enjoy.
 >
 > Use at your own risk. I offer no warranty or guarantees for this software.
 
 ## Download
 
-**Latest version: v1.3** (Oct 8, 2026)
+**Latest version: v1.4** (Nov 3, 2026)
 
-- [MediaRunner_v1.3_no-install.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.3/MediaRunner_v1.3_no-install.zip) - 148 KB
-- [MediaRunner_v1.3_Setup.exe](https://github.com/codenomics/MediaRunner/releases/download/v1.3/MediaRunner_v1.3_Setup.exe) - 187 KB
-- [MediaRunner_v1.3_source.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.3/MediaRunner_v1.3_source.zip) - 131 KB
+- [MediaRunner_v1.4_no-install.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.4/MediaRunner_v1.4_no-install.zip) - 157 KB
+- [MediaRunner_v1.4_Setup.exe](https://github.com/codenomics/MediaRunner/releases/download/v1.4/MediaRunner_v1.4_Setup.exe) - 195 KB
+- [MediaRunner_v1.4_source.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.4/MediaRunner_v1.4_source.zip) - 139 KB
 
-What's new in v1.3:
+What's new in v1.4:
 
-- updater versioning fix**
+- Added profiles (Settings > Profile): one for Home, one for Away, or one for another server, each with its own address, ports and keys
+- Home: the Sonarr and Radarr cards now show what NZBGet is really downloading, so they no longer get stuck
+- Movies: open a movie to see its ratings, cast, director and an Open on IMDb link
+- Movies: Select now stays in Poster view
+- Shows: added Select, to tick several shows (list or posters) and remove them together
+- Add show and Add movie now remember the folder and quality you picked last, even after closing the app
 
 Older versions are on the [Releases page](https://github.com/codenomics/MediaRunner/releases).
 
@@ -41,18 +60,6 @@ Want to see how it works, or build it yourself? Download the file ending in `_so
 ## More details
 
 ```
-MEDIARUNNER
-===========
-
-One window to look after the media apps on your home server: Sonarr,
-Radarr, NZBGet, Overseerr, Prowlarr, Tautulli and Portainer, plus the
-server's own CPU, memory and disks. Look at what is downloading, approve
-requests, restart a container, and more, without opening each app's web page.
-
-MediaRunner talks to your apps over your home network. They need to be
-running already; it does not install or replace any of them.
-
-
 GETTING STARTED
 ---------------
 Pick one. Both give you the same app.
@@ -104,7 +111,8 @@ USING IT
 --------
 Home
 - A card for each app with a green or red light, plus the useful numbers:
-  what is downloading and coming up, NZBGet's speed (Pause all / Resume
+  what is downloading (Sonarr and Radarr count what NZBGet is downloading
+  for them) and coming up, NZBGet's speed (Pause all / Resume
   all), requests waiting, indexers working, who is watching, containers
   running, CPU and memory, and the free space on your disks.
 - Click a card to open that app's tab. It refreshes itself every 10 seconds.
@@ -116,8 +124,13 @@ Home
 
 Shows (Sonarr) and Movies (Radarr)
 - Search, sort, and switch between a list and a wall of posters.
-- Add a show or movie, remove one, search for missing episodes, pick a
-  release yourself, or remove a bad file and block that release.
+- Add a show or movie (it remembers the folder and quality you picked last),
+  remove one, search for missing episodes, pick a release yourself, or
+  remove a bad file and block that release.
+- Select: tick several shows or movies (in the list or the poster view) and
+  remove them in one go.
+- Open a movie to see its ratings, age rating, genres, director and cast, and
+  an Open on IMDb link. (The cast needs Radarr 5 or newer.)
 
 Downloads (NZBGet)
 - What is downloading now, with Pause all / Resume all, plus History
@@ -166,9 +179,22 @@ The same steps, with a Copy button, are shown on the Server tab until
 Glances answers. Click a disk there to rename or hide it.
 
 
+PROFILES (HOME, AWAY ...)
+-------------------------
+Settings > Profile (top right) keeps a separate server address, ports and keys
+for each place you connect from, or for a second server.
+- New makes a copy of the profile you are using. Change the server address (and
+  anything else that is different), then press Test connection.
+- Pick a profile in the list to switch to it. The whole app switches, and the
+  window title shows the profile name once you have more than one.
+- Rename and Delete work on the profile shown in the list.
+MediaRunner only talks to the address you type. To reach your server from
+outside your home you still need a way in, such as a VPN back to your network.
+
+
 SETTINGS
 --------
-- Server address, and a port + key for each app.
+- Profile, server address, and a port + key for each app.
 - Theme: Runner (neon), Dark, Light, Orchid or Princess.
 - Updates: Check for updates, and a tick box to check when MediaRunner starts.
 
