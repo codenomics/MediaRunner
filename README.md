@@ -1,18 +1,19 @@
 # MediaRunner
 
-One window to look after the media apps on your home server: Sonarr, Radarr, NZBGet, Overseerr, Prowlarr, Tautulli and Portainer, plus the server's own CPU, memory and disks. Look at what is downloading, approve requests, restart a container, and more, without opening each app's web page.
+One window to look after the media apps on your home server: Sonarr, Radarr, NZBGet, Overseerr, Prowlarr, Tautulli and Portainer, plus the server's own CPU, memory, disks and RAID, drive health (Scrutiny) and Maintainerr. Look at what is downloading, approve requests, restart a container, and more, without opening each app's web page.
 
 MediaRunner talks to your apps over your home network (or any address you give it). They need to be running already; it does not install or replace any of them.
 
 ### Features
 
 - A Home page with a card for each app: a green or red light, what is downloading, what is coming up, requests waiting, who is watching, running containers, and the server's CPU, memory and disks
-- Shows (Sonarr) and Movies (Radarr): browse, add, remove, search, pick a release yourself, and fix bad downloads. Open a movie for its ratings and cast
+- Shows (Sonarr) and Movies (Radarr): browse, add, remove, search, pick a release yourself, and fix bad downloads. Open a movie or show for its ratings and cast with photos, and click an actor to see what else of theirs you have
 - Tick several shows or movies at once to remove them
 - Downloads (NZBGet), Requests (Overseerr), Tautulli and Portainer tabs
 - A Server tab with CPU, load, memory, disks, network and temperatures
+- Home cards for RAID health, drive health (Scrutiny) and Maintainerr
 - Profiles, so one window can switch between Home, Away or another server
-- Five themes, and it checks for new versions when it starts
+- 19 themes (Runner, Dark, Light, Orchid, Princess, HCN Radio and the ship makers), and it checks for new versions when it starts
 
 > This application is built by AI. I made this for myself and I'm uploading it to GitHub for backup and to share in case anyone can get any use out of it. It's pretty specific to my setup and my needs, but if you can get any use out of it, then enjoy.
 >
@@ -20,20 +21,20 @@ MediaRunner talks to your apps over your home network (or any address you give i
 
 ## Download
 
-**Latest version: v1.4** (Nov 3, 2026)
+**Latest version: v1.5** (Nov 12, 2026)
 
-- [MediaRunner_v1.4_no-install.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.4/MediaRunner_v1.4_no-install.zip) - 157 KB
-- [MediaRunner_v1.4_Setup.exe](https://github.com/codenomics/MediaRunner/releases/download/v1.4/MediaRunner_v1.4_Setup.exe) - 195 KB
-- [MediaRunner_v1.4_source.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.4/MediaRunner_v1.4_source.zip) - 139 KB
+- [MediaRunner_v1.5_no-install.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.5/MediaRunner_v1.5_no-install.zip) - 174 KB
+- [MediaRunner_v1.5_Setup.exe](https://github.com/codenomics/MediaRunner/releases/download/v1.5/MediaRunner_v1.5_Setup.exe) - 212 KB
+- [MediaRunner_v1.5_source.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.5/MediaRunner_v1.5_source.zip) - 155 KB
 
-What's new in v1.4:
+What's new in v1.5:
 
-- Added profiles (Settings > Profile): one for Home, one for Away, or one for another server, each with its own address, ports and keys
-- Home: the Sonarr and Radarr cards now show what NZBGet is really downloading, so they no longer get stuck
-- Movies: open a movie to see its ratings, cast, director and an Open on IMDb link
-- Movies: Select now stays in Poster view
-- Shows: added Select, to tick several shows (list or posters) and remove them together
-- Add show and Add movie now remember the folder and quality you picked last, even after closing the app
+- Home: three new cards, RAID health (read from your server's Linux RAID through a small helper container), drive health from Scrutiny, and Maintainerr
+- Shows: open a show to see its rating, an Open on IMDb link and the cast with photos
+- Movies and Shows: click an actor to see every movie and show of theirs that is in your library, and open it from there
+- Settings: Scrutiny and Maintainerr can be connected (no key needed); the app buttons now wrap onto a second row
+- Themes: 14 new looks pick-able in Settings, HCN Radio plus the ship makers (Aegis, Aopoa, Argo, Banu Souli, Crusader, Drake, Esperia, Gatac, Grey's Market, Kruger, MISC, Origin and RSI)
+- Home: Arrange cards now lets you resize a card between half and full width, and drop a card exactly where the pink line shows (even a full-width card above two half-width ones)
 
 Older versions are on the [Releases page](https://github.com/codenomics/MediaRunner/releases).
 
@@ -104,7 +105,8 @@ Where to find each key:
 - Portainer: click your user name > My account > Access tokens > Add access
   token. Copy it right away; Portainer shows it only once. If Portainer is on
   port 9443, type 9443 as the port; MediaRunner then uses its secure address.
-- Server (Glances): no key. See THE SERVER TAB below.
+- Server (Glances), RAID, Scrutiny and Maintainerr: no key. Just check the port
+  (61208, 61209, 8080 and 6246). See THE SERVER TAB and THE RAID CARD below.
 
 
 USING IT
@@ -115,12 +117,17 @@ Home
   for them) and coming up, NZBGet's speed (Pause all / Resume
   all), requests waiting, indexers working, who is watching, containers
   running, CPU and memory, and the free space on your disks.
+- Three more cards: RAID health (for Linux software RAID, mdadm), drive
+  health from Scrutiny, and Maintainerr's collections and what is due to be
+  removed.
 - Click a card to open that app's tab. It refreshes itself every 10 seconds.
 - Click a disk on the Disk space card to rename it or hide it. "N hidden -
   show all" brings hidden disks back.
-- Arrange cards (top right) lets you drag any card onto another card to move
-  it there. Press Done arranging when you're finished. Reset order puts the
-  cards back the way they started.
+- Arrange cards (top right) lets you move and resize the cards. Drag a card
+  and a pink line shows where it will land (a full-width card can go above a
+  pair of half-width ones); the button on each card switches it between half
+  and full width. Press Done arranging when you're finished. Reset order puts
+  the cards back the way they started.
 
 Shows (Sonarr) and Movies (Radarr)
 - Search, sort, and switch between a list and a wall of posters.
@@ -129,8 +136,11 @@ Shows (Sonarr) and Movies (Radarr)
   remove a bad file and block that release.
 - Select: tick several shows or movies (in the list or the poster view) and
   remove them in one go.
-- Open a movie to see its ratings, age rating, genres, director and cast, and
-  an Open on IMDb link. (The cast needs Radarr 5 or newer.)
+- Open a movie or show to see its ratings, age rating, genres, director or
+  creator, and an Open on IMDb link, plus the cast with photos (the photos come
+  from Overseerr, so connect it in Settings).
+- Click an actor to see their page and every movie and show of theirs in your
+  library. Click one to open it.
 
 Downloads (NZBGet)
 - What is downloading now, with Pause all / Resume all, plus History
@@ -179,6 +189,35 @@ The same steps, with a Copy button, are shown on the Server tab until
 Glances answers. Click a disk there to rename or hide it.
 
 
+THE RAID CARD
+-------------
+The RAID card on the Home page shows whether your Linux software (mdadm)
+RAID is healthy, how many drives are working and how many are spares, and a
+check or rebuild while one is running. It reads the server's /proc/mdstat
+through a tiny helper container. To set it up (about 2 minutes):
+  1. In Portainer, open Stacks > Add stack and name it mdstat.
+  2. Paste this into the editor, then press Deploy the stack:
+
+       services:
+         mdstat:
+           image: alpine/socat
+           container_name: mdstat
+           restart: unless-stopped
+           network_mode: host
+           entrypoint: /bin/sh
+           command:
+             - -c
+             - |
+               printf '%s\n' '#!/bin/sh' 'while read l && [ "$${#l}" -gt 1 ]; do true; done' 'printf "HTTP/1.0 200 OK\r\n\r\n"' 'cat /proc/mdstat' > /tmp/h.sh
+               chmod +x /tmp/h.sh
+               exec socat TCP-LISTEN:61209,fork,reuseaddr EXEC:/tmp/h.sh
+
+  3. In MediaRunner, open Settings > RAID and press Test connection. The
+     port is 61209 and there is no key.
+It only shows RAID that Linux itself manages (mdadm). A RAID controller card
+or a ZFS pool won't show up.
+
+
 PROFILES (HOME, AWAY ...)
 -------------------------
 Settings > Profile (top right) keeps a separate server address, ports and keys
@@ -195,7 +234,7 @@ outside your home you still need a way in, such as a VPN back to your network.
 SETTINGS
 --------
 - Profile, server address, and a port + key for each app.
-- Theme: Runner (neon), Dark, Light, Orchid or Princess.
+- Theme: Runner (neon), Dark, Light, Orchid, Princess, HCN Radio, or a ship maker look (Aegis, Aopoa, Argo, Banu Souli, Crusader, Drake, Esperia, Gatac, Grey's Market, Kruger, MISC, Origin and RSI).
 - Updates: Check for updates, and a tick box to check when MediaRunner starts.
 
 
