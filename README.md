@@ -21,20 +21,15 @@ MediaRunner talks to your apps over your home network (or any address you give i
 
 ## Download
 
-**Latest version: v1.5** (Nov 12, 2026)
+**Latest version: v1.6** (Nov 14, 2026)
 
-- [MediaRunner_v1.5_no-install.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.5/MediaRunner_v1.5_no-install.zip) - 174 KB
-- [MediaRunner_v1.5_Setup.exe](https://github.com/codenomics/MediaRunner/releases/download/v1.5/MediaRunner_v1.5_Setup.exe) - 212 KB
-- [MediaRunner_v1.5_source.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.5/MediaRunner_v1.5_source.zip) - 155 KB
+- [MediaRunner_v1.6_no-install.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.6/MediaRunner_v1.6_no-install.zip) - 175 KB
+- [MediaRunner_v1.6_Setup.exe](https://github.com/codenomics/MediaRunner/releases/download/v1.6/MediaRunner_v1.6_Setup.exe) - 212 KB
+- [MediaRunner_v1.6_source.zip](https://github.com/codenomics/MediaRunner/releases/download/v1.6/MediaRunner_v1.6_source.zip) - 155 KB
 
-What's new in v1.5:
+What's new in v1.6:
 
-- Home: three new cards, RAID health (read from your server's Linux RAID through a small helper container), drive health from Scrutiny, and Maintainerr
-- Shows: open a show to see its rating, an Open on IMDb link and the cast with photos
-- Movies and Shows: click an actor to see every movie and show of theirs that is in your library, and open it from there
-- Settings: Scrutiny and Maintainerr can be connected (no key needed); the app buttons now wrap onto a second row
-- Themes: 14 new looks pick-able in Settings, HCN Radio plus the ship makers (Aegis, Aopoa, Argo, Banu Souli, Crusader, Drake, Esperia, Gatac, Grey's Market, Kruger, MISC, Origin and RSI)
-- Home: Arrange cards now lets you resize a card between half and full width, and drop a card exactly where the pink line shows (even a full-width card above two half-width ones)
+- Home: the drive health card only says a drive needs attention when the drive's own SMART check fails; a Scrutiny-only warning now shows as a yellow warning
 
 Older versions are on the [Releases page](https://github.com/codenomics/MediaRunner/releases).
 
